@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <section class="calculator">
+        <input type="text" id="display" readonly>
+        <!-- readonly is a attribute that read only display value inside box -->
+        <div id="keys">
+            <button onclick="Todisplay('+')" class="operator">+</button>
+            <button onclick="Todisplay('7')" >7</button>
+            <button onclick="Todisplay('8')" >8</button>
+            <button onclick="Todisplay('9')" >9</button>
+            <button onclick="Todisplay('-')" class="operator">-</button>
+            <button onclick="Todisplay('4')" >4</button>
+            <button onclick="Todisplay('5')" >5</button>
+            <button onclick="Todisplay('6')" >6</button>
+            <button onclick="Todisplay('*')" class="operator">*</button>
+            <button onclick="Todisplay('1')" >1</button>
+            <button onclick="Todisplay('2')" >2</button>
+            <button onclick="Todisplay('3')" >3</button>
+            <button onclick="Todisplay('/')" class="operator">/</button>
+            <button onclick="Todisplay('0')" >0</button>
+            <button onclick="Todisplay('.')" >.</button>
+            <button onclick="calculate('=')" >=</button>
+            <button onclick="cleardisplay('c')" class="operator">c</button>
+        </div>
+    </section>
+
+    <script>
+       const display=document.getElementById('display')
+
+       function Todisplay(input){
+        display.value += input
+       }
+
+       function cleardisplay(){
+        display.value =''
+       }
+
+       function calculate(){
+        display.value = eval(display.value)
+       }
+    </script>
+</body>
+</html>
